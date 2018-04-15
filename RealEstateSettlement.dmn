@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<semantic:definitions xmlns:semantic="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns="http://www.trisotech.com/definitions/_f1b2fee4-700f-4fbb-ab84-590388168126" xmlns:feel="http://www.omg.org/spec/FEEL/20140401" xmlns:tc="http://www.omg.org/spec/DMN/20160719/testcase" xmlns:triso="http://www.trisotech.com/2015/triso/modeling" xmlns:trisofeed="http://trisotech.com/feed" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exporter="DMN Modeler" exporterVersion="6.0.6" id="_f1b2fee4-700f-4fbb-ab84-590388168126" name="Real Estate Settlement" namespace="http://www.trisotech.com/definitions/_f1b2fee4-700f-4fbb-ab84-590388168126" triso:logoChoice="Default">
+  <semantic:extensionElements>
+    <tc:testCases>
+      <tc:testCase id="_667c729c-0a73-470f-b844-fb0d070866c8" name="Test case 1">
+        <tc:inputNode name="Property">
+          <tc:component name="Province">
+            <tc:value xsi:type="xsd:string">ON</tc:value>
+          </tc:component>
+          <tc:component name="City">
+            <tc:value xsi:type="xsd:string">Toronto</tc:value>
+          </tc:component>
+        </tc:inputNode>
+        <tc:inputNode name="Buyer">
+          <tc:component name="Canadian Citizen">
+            <tc:value xsi:type="xsd:boolean">true</tc:value>
+          </tc:component>
+          <tc:component name="First Time Buyer">
+            <tc:value xsi:type="xsd:boolean">false</tc:value>
+          </tc:component>
+          <tc:component name="Age">
+            <tc:value xsi:type="xsd:double">39</tc:value>
+          </tc:component>
+        </tc:inputNode>
+        <tc:inputNode name="Mortgage">
+          <tc:component name="Purchase Price">
+            <tc:value xsi:type="xsd:double">820000</tc:value>
+          </tc:component>
+          <tc:component name="Down Payment">
+            <tc:value xsi:type="xsd:double">164000</tc:value>
+          </tc:component>
+          <tc:component name="Insurance">
+            <tc:value xsi:type="xsd:boolean">false</tc:value>
+          </tc:component>
+        </tc:inputNode>
+        <tc:resultNode name="Real Estate Taxes">
+          <tc:expected>
+            <tc:component name="Ontario Tax">
+              <tc:value xsi:type="xsd:double">12875</tc:value>
+            </tc:component>
+            <tc:component name="Toronto Tax">
+              <tc:value xsi:type="xsd:double">12875</tc:value>
+            </tc:component>
+            <tc:component name="Insurance Premium">
+              <tc:value xsi:type="xsd:double">0</tc:value>
+            </tc:component>
+          </tc:expected>
+        </tc:resultNode>
+        <tc:resultNode name="Toronto Land Transfer Tax">
+          <tc:expected>
+            <tc:value xsi:type="xsd:double">12875</tc:value>
+          </tc:expected>
+        </tc:resultNode>
+        <tc:resultNode name="Ontario Land Transfer Tax">
+          <tc:expected>
+            <tc:value xsi:type="xsd:double">12875</tc:value>
+          </tc:expected>
+        </tc:resultNode>
+        <tc:resultNode name="Mortgage Insurance">
+          <tc:expected>
+            <tc:value xsi:type="xsd:double">0</tc:value>
+          </tc:expected>
+        </tc:resultNode>
+      </tc:testCase>
+      <tc:testCase id="_c8e268f4-0e3b-4967-a2c9-2d0b20f59030" name="Test case 2">
+        <tc:inputNode name="Property">
+          <tc:component name="Province">
+            <tc:value xsi:type="xsd:string">ON</tc:value>
+          </tc:component>
+          <tc:component name="City">
+            <tc:value xsi:type="xsd:string">Toronto</tc:value>
+          </tc:component>
+        </tc:inputNode>
+        <tc:inputNode name="Buyer">
+          <tc:component name="Canadian Citizen">
+            <tc:value xsi:type="xsd:boolean">true</tc:value>
+          </tc:component>
+          <tc:component name="First Time Buyer">
+            <tc:value xsi:type="xsd:boolean">true</tc:value>
+          </tc:component>
+          <tc:component name="Age">
+            <tc:value xsi:type="xsd:double">39</tc:value>
+          </tc:component>
+        </tc:inputNode>
+        <tc:inputNode name="Mortgage">
+          <tc:component name="Purchase Price">
+            <tc:value xsi:type="xsd:double">820000</tc:value>
+          </tc:component>
+          <tc:component name="Down Payment">
+            <tc:value xsi:type="xsd:double">164000</tc:value>
+          </tc:component>
+          <tc:component name="Insurance">
+            <tc:value xsi:type="xsd:boolean">false</tc:value>
+          </tc:component>
+        </tc:inputNode>
+        <tc:resultNode name="Real Estate Taxes">
+          <tc:expected>
+            <tc:component name="Ontario Tax">
+              <tc:value xsi:type="xsd:double">8875</tc:value>
+            </tc:component>
+            <tc:component name="Toronto Tax">
+              <tc:value xsi:type="xsd:double">8400</tc:value>
+            </tc:component>
+            <tc:component name="Insurance Premium">
+              <tc:value xsi:type="xsd:double">0</tc:value>
+            </tc:component>
+          </tc:expected>
+        </tc:resultNode>
+        <tc:resultNode name="Toronto Land Transfer Tax">
+          <tc:expected>
+            <tc:value xsi:type="xsd:double">8400</tc:value>
+          </tc:expected>
+        </tc:resultNode>
+        <tc:resultNode name="Ontario Land Transfer Tax">
+          <tc:expected>
+            <tc:value xsi:type="xsd:double">8875</tc:value>
+          </tc:expected>
+        </tc:resultNode>
+        <tc:resultNode name="Mortgage Insurance">
+          <tc:expected>
+            <tc:value xsi:type="xsd:double">0</tc:value>
+          </tc:expected>
+        </tc:resultNode>
+      </tc:testCase>
+      <tc:testCase id="_540a177e-14ba-4cf6-988a-6adea120a35e" name="Test case 3">
+        <tc:inputNode name="Property">
+          <tc:component name="Province">
+            <tc:value xsi:type="xsd:string">ON</tc:value>
+          </tc:component>
+          <tc:component name="City">
+            <tc:value xsi:type="xsd:string">Toronto</tc:value>
+          </tc:component>
+        </tc:inputNode>
+        <tc:inputNode name="Buyer">
+          <tc:component name="Canadian Citizen">
+            <tc:value xsi:type="xsd:boolean">false</tc:value>
+          </tc:component>
+          <tc:component name="First Time Buyer">
+            <tc:value xsi:type="xsd:boolean">true</tc:value>
+          </tc:component>
+          <tc:component name="Age">
+            <tc:value xsi:type="xsd:double">39</tc:value>
+          </tc:component>
+        </tc:inputNode>
+        <tc:inputNode name="Mortgage">
+          <tc:component name="Purchase Price">
+            <tc:value xsi:type="xsd:double">820000</tc:value>
+          </tc:component>
+          <tc:component name="Down Payment">
+            <tc:value xsi:type="xsd:double">164000</tc:value>
+          </tc:component>
+          <tc:component name="Insurance">
+            <tc:value xsi:type="xsd:boolean">false</tc:value>
+          </tc:component>
+        </tc:inputNode>
+        <tc:resultNode name="Real Estate Taxes">
+          <tc:expected>
+            <tc:component name="Ontario Tax">
+              <tc:value xsi:type="xsd:double">12875</tc:value>
+            </tc:component>
+            <tc:component name="Toronto Tax">
+              <tc:value xsi:type="xsd:double">12875</tc:value>
+            </tc:component>
+            <tc:component name="Insurance Premium">
+              <tc:value xsi:type="xsd:double">0</tc:value>
+            </tc:component>
+          </tc:expected>
+        </tc:resultNode>
+        <tc:resultNode name="Toronto Land Transfer Tax">
+          <tc:expected>
+            <tc:value xsi:type="xsd:double">12875</tc:value>
+          </tc:expected>
+        </tc:resultNode>
+        <tc:resultNode name="Ontario Land Transfer Tax">
+          <tc:expected>
+            <tc:value xsi:type="xsd:double">12875</tc:value>
+          </tc:expected>
+        </tc:resultNode>
+        <tc:resultNode name="Mortgage Insurance">
+          <tc:expected>
+            <tc:value xsi:type="xsd:double">0</tc:value>
+          </tc:expected>
+        </tc:resultNode>
+      </tc:testCase>
+      <tc:testCase id="_896de883-1359-4d6b-804c-e5ffcdf81ef7" name="Test case 4">
+        <tc:inputNode name="Property">
+          <tc:component name="Province">
+            <tc:value xsi:type="xsd:string">ON</tc:value>
+          </tc:component>
+          <tc:component name="City">
+            <tc:value xsi:type="xsd:string">Toronto</tc:value>
+          </tc:component>
+        </tc:inputNode>
+        <tc:inputNode name="Buyer">
+          <tc:component name="Canadian Citizen">
+            <tc:value xsi:type="xsd:boolean">true</tc:value>
+          </tc:component>
+          <tc:component name="First Time Buyer">
+            <tc:value xsi:type="xsd:boolean">true</tc:value>
+          </tc:component>
+          <tc:component name="Age">
+            <tc:value xsi:type="xsd:double">39</tc:value>
+          </tc:component>
+        </tc:inputNode>
+        <tc:inputNode name="Mortgage">
+          <tc:component name="Purchase Price">
+            <tc:value xsi:type="xsd:double">820000</tc:value>
+          </tc:component>
+          <tc:component name="Down Payment">
+            <tc:value xsi:type="xsd:double">120000</tc:value>
+          </tc:component>
+          <tc:component name="Insurance">
+            <tc:value xsi:type="xsd:boolean">false</tc:value>
+          </tc:component>
+        </tc:inputNode>
+        <tc:resultNode name="Real Estate Taxes">
+          <tc:expected>
+            <tc:component name="Ontario Tax">
+              <tc:value xsi:type="xsd:double">8875</tc:value>
+            </tc:component>
+            <tc:component name="Toronto Tax">
+              <tc:value xsi:type="xsd:double">8400</tc:value>
+            </tc:component>
+            <tc:component name="Insurance Premium">
+              <tc:value xsi:type="xsd:double">21700</tc:value>
+            </tc:component>
+          </tc:expected>
+        </tc:resultNode>
+        <tc:resultNode name="Toronto Land Transfer Tax">
+          <tc:expected>
+            <tc:value xsi:type="xsd:double">8400</tc:value>
+          </tc:expected>
+        </tc:resultNode>
+        <tc:resultNode name="Ontario Land Transfer Tax">
+          <tc:expected>
+            <tc:value xsi:type="xsd:double">8875</tc:value>
+          </tc:expected>
+        </tc:resultNode>
+        <tc:resultNode name="Mortgage Insurance">
+          <tc:expected>
+            <tc:value xsi:type="xsd:double">21700</tc:value>
+          </tc:expected>
+        </tc:resultNode>
+      </tc:testCase>
+      <tc:testCase id="_cf758a86-b9a0-4731-8415-6bd61215c1f2" name="Test case 5">
+        <tc:inputNode name="Property">
+          <tc:component name="Province">
+            <tc:value xsi:type="xsd:string">ON</tc:value>
+          </tc:component>
+          <tc:component name="City">
+            <tc:value xsi:type="xsd:string">Mississauga</tc:value>
+          </tc:component>
+        </tc:inputNode>
+        <tc:inputNode name="Buyer">
+          <tc:component name="Canadian Citizen">
+            <tc:value xsi:type="xsd:boolean">true</tc:value>
+          </tc:component>
+          <tc:component name="First Time Buyer">
+            <tc:value xsi:type="xsd:boolean">true</tc:value>
+          </tc:component>
+          <tc:component name="Age">
+            <tc:value xsi:type="xsd:double">39</tc:value>
+          </tc:component>
+        </tc:inputNode>
+        <tc:inputNode name="Mortgage">
+          <tc:component name="Purchase Price">
+            <tc:value xsi:type="xsd:double">820000</tc:value>
+          </tc:component>
+          <tc:component name="Down Payment">
+            <tc:value xsi:type="xsd:double">120000</tc:value>
+          </tc:component>
+          <tc:component name="Insurance">
+            <tc:value xsi:type="xsd:boolean">false</tc:value>
+          </tc:component>
+        </tc:inputNode>
+        <tc:resultNode name="Real Estate Taxes">
+          <tc:expected>
+            <tc:component name="Ontario Tax">
+              <tc:value xsi:type="xsd:double">8875</tc:value>
+            </tc:component>
+            <tc:component name="Toronto Tax">
+              <tc:value xsi:type="xsd:double">0</tc:value>
+            </tc:component>
+            <tc:component name="Insurance Premium">
+              <tc:value xsi:type="xsd:double">21700</tc:value>
+            </tc:component>
+          </tc:expected>
+        </tc:resultNode>
+        <tc:resultNode name="Toronto Land Transfer Tax">
+          <tc:expected>
+            <tc:value xsi:type="xsd:double">0</tc:value>
+          </tc:expected>
+        </tc:resultNode>
+        <tc:resultNode name="Ontario Land Transfer Tax">
+          <tc:expected>
+            <tc:value xsi:type="xsd:double">8875</tc:value>
+          </tc:expected>
+        </tc:resultNode>
+        <tc:resultNode name="Mortgage Insurance">
+          <tc:expected>
+            <tc:value xsi:type="xsd:double">21700</tc:value>
+          </tc:expected>
+        </tc:resultNode>
+      </tc:testCase>
+    </tc:testCases>
+    <triso:dmnInputs>[{"name":"Property","id":"_91c25061-ab55-4235-98ba-0709c2d9bf25","type":"complex","children":[{"name":"Province","id":"_91c25061-ab55-4235-98ba-0709c2d9bf25_c4849e8e-6e5c-4ffb-a3e6-5880315aae95","type":"string","constraints":{"dataType":"feel:string","constraints":"\"ON\",\"QC\",\"NS\",\"NB\",\"MB\",\"BC\",\"PE\",\"SK\",\"AB\",\"NL\"","constraintsType":"enumeration","_choices":["\"ON\"","\"QC\"","\"NS\"","\"NB\"","\"MB\"","\"BC\"","\"PE\"","\"SK\"","\"AB\"","\"NL\""]}},{"name":"City","id":"_91c25061-ab55-4235-98ba-0709c2d9bf25_986e9e84-2e9a-489f-a901-0fcc01b6690e","type":"string"}]},{"name":"Buyer","id":"_a585f28c-56d0-4a44-8360-b1d46d3bc9cf","type":"complex","children":[{"name":"Canadian Citizen","id":"_a585f28c-56d0-4a44-8360-b1d46d3bc9cf_e4f9f394-b6e4-4071-b315-e4dc8c9a69f4","type":"boolean"},{"name":"First Time Buyer","id":"_a585f28c-56d0-4a44-8360-b1d46d3bc9cf_550cd96d-a241-4218-b456-1da0cc5cd0f1","type":"boolean"},{"name":"Age","id":"_a585f28c-56d0-4a44-8360-b1d46d3bc9cf_ea103a22-3bf1-4931-baff-43d2e21664f7","type":"number"}]},{"name":"Mortgage","id":"_abc44766-1793-475e-8e9a-2e7b8cbca22b","type":"complex","children":[{"name":"Purchase Price","id":"_abc44766-1793-475e-8e9a-2e7b8cbca22b_94b074df-f13b-48a2-9b22-5d922136edf1","type":"number"},{"name":"Down Payment","id":"_abc44766-1793-475e-8e9a-2e7b8cbca22b_2d10cb26-dc72-4d08-8eed-2f3945296e6e","type":"number"},{"name":"Insurance","id":"_abc44766-1793-475e-8e9a-2e7b8cbca22b_9b74a30e-7571-4484-b058-d18e3fd56ce5","type":"boolean"}]}]</triso:dmnInputs>
+  </semantic:extensionElements>
+  <semantic:itemDefinition isCollection="false" label="tProperty" name="tProperty">
+    <semantic:itemComponent id="_c4849e8e-6e5c-4ffb-a3e6-5880315aae95" name="Province">
+      <semantic:typeRef>tProvince</semantic:typeRef>
+    </semantic:itemComponent>
+    <semantic:itemComponent id="_986e9e84-2e9a-489f-a901-0fcc01b6690e" name="City">
+      <semantic:typeRef>feel:string</semantic:typeRef>
+    </semantic:itemComponent>
+  </semantic:itemDefinition>
+  <semantic:itemDefinition isCollection="false" label="tBuyer" name="tBuyer">
+    <semantic:itemComponent id="_e4f9f394-b6e4-4071-b315-e4dc8c9a69f4" isCollection="false" name="Canadian Citizen">
+      <semantic:typeRef>feel:boolean</semantic:typeRef>
+    </semantic:itemComponent>
+    <semantic:itemComponent id="_550cd96d-a241-4218-b456-1da0cc5cd0f1" isCollection="false" name="First Time Buyer">
+      <semantic:typeRef>feel:boolean</semantic:typeRef>
+    </semantic:itemComponent>
+    <semantic:itemComponent id="_ea103a22-3bf1-4931-baff-43d2e21664f7" name="Age">
+      <semantic:typeRef>feel:number</semantic:typeRef>
+    </semantic:itemComponent>
+  </semantic:itemDefinition>
+  <semantic:itemDefinition isCollection="false" label="tProvince" name="tProvince">
+    <semantic:typeRef>feel:string</semantic:typeRef>
+    <semantic:allowedValues triso:constraintsType="enumeration">
+      <semantic:text>"ON","QC","NS","NB","MB","BC","PE","SK","AB","NL"</semantic:text>
+    </semantic:allowedValues>
+  </semantic:itemDefinition>
+  <semantic:itemDefinition label="tMortgage" name="tMortgage">
+    <semantic:itemComponent id="_94b074df-f13b-48a2-9b22-5d922136edf1" name="Purchase Price">
+      <semantic:typeRef>feel:number</semantic:typeRef>
+    </semantic:itemComponent>
+    <semantic:itemComponent id="_2d10cb26-dc72-4d08-8eed-2f3945296e6e" name="Down Payment">
+      <semantic:typeRef>feel:number</semantic:typeRef>
+    </semantic:itemComponent>
+    <semantic:itemComponent id="_9b74a30e-7571-4484-b058-d18e3fd56ce5" name="Insurance">
+      <semantic:typeRef>feel:boolean</semantic:typeRef>
+    </semantic:itemComponent>
+  </semantic:itemDefinition>
+  <semantic:itemDefinition isCollection="false" label="tPurchaseTaxes" name="tPurchaseTaxes">
+    <semantic:itemComponent id="_536473fe-f167-44ce-b932-0459a39cf345" name="Ontario Tax">
+      <semantic:typeRef>feel:number</semantic:typeRef>
+    </semantic:itemComponent>
+    <semantic:itemComponent id="_29cd6db2-25cb-479a-aa06-95c0cafeb0dc" name="Toronto Tax">
+      <semantic:typeRef>feel:number</semantic:typeRef>
+    </semantic:itemComponent>
+    <semantic:itemComponent id="_c03b318a-d320-467a-8c8b-27ef5be7c12f" name="Insurance Premium">
+      <semantic:typeRef>feel:number</semantic:typeRef>
+    </semantic:itemComponent>
+  </semantic:itemDefinition>
+  <semantic:decision id="_5136a196-0046-4367-9c62-96f0d19ab084" name="Ontario Land Transfer Tax">
+    <semantic:variable id="_70e12af9-880b-47c5-b850-6aed65d8391c" name="Ontario Land Transfer Tax" typeRef="feel:number"/>
+    <semantic:informationRequirement>
+      <semantic:requiredInput href="#_91c25061-ab55-4235-98ba-0709c2d9bf25"/>
+    </semantic:informationRequirement>
+    <semantic:informationRequirement>
+      <semantic:requiredInput href="#_a585f28c-56d0-4a44-8360-b1d46d3bc9cf"/>
+    </semantic:informationRequirement>
+    <semantic:informationRequirement>
+      <semantic:requiredInput href="#_abc44766-1793-475e-8e9a-2e7b8cbca22b"/>
+    </semantic:informationRequirement>
+    <semantic:authorityRequirement>
+      <semantic:requiredAuthority href="#_bf90fd57-da92-4cd7-b271-72343ab01db2"/>
+    </semantic:authorityRequirement>
+    <semantic:context id="_954daf37-642e-4ccc-bc0f-6866cf11b477">
+      <semantic:contextEntry>
+        <semantic:variable id="_a44b7191-0f63-4490-936d-411dbbbdae5e" name="Base Amount" typeRef="feel:number"/>
+        <semantic:decisionTable hitPolicy="UNIQUE" id="_2cd1bb90-b3e4-4cc7-a6c3-f4a11c3d5e1e" outputLabel="Base Amount">
+          <semantic:input id="_93dcf1f8-54a6-4745-bbd1-aa3ae690f87f">
+            <semantic:inputExpression typeRef="feel:number">
+              <semantic:text>Mortgage.Purchase Price</semantic:text>
+            </semantic:inputExpression>
+          </semantic:input>
+          <semantic:output id="_f0450344-12cb-49be-8160-bb9462ffd50e"/>
+          <semantic:rule id="_fde8bbcf-b177-4b5b-b35e-8fed17e25f52">
+            <semantic:inputEntry id="_46e1100e-7cb0-44d4-8a95-607498ab7602">
+              <semantic:text>&lt; 55000</semantic:text>
+            </semantic:inputEntry>
+            <semantic:outputEntry id="_88dadd6b-35b8-4060-8521-20b79c30c397">
+              <semantic:text>0.005 * Mortgage.Purchase Price</semantic:text>
+            </semantic:outputEntry>
+          </semantic:rule>
+          <semantic:rule id="_6950b48d-7543-47c0-a75e-58c24309d3bf">
+            <semantic:inputEntry id="_dab294fa-e5f0-4216-b700-24c3db506a53">
+              <semantic:text>[ 55000 .. 250000 )</semantic:text>
+            </semantic:inputEntry>
+            <semantic:outputEntry id="_08eeb631-f4b0-41f8-960e-d360ee5bcb7e">
+              <semantic:text>( 0.01 * Mortgage.Purchase Price ) - 275</semantic:text>
+            </semantic:outputEntry>
+          </semantic:rule>
+          <semantic:rule id="_15a69cc0-03ad-4b29-965d-60017342b767">
+            <semantic:inputEntry id="_7b34a532-aab2-4ebf-8b6c-d50fedbb7abc">
+              <semantic:text>[ 250000 .. 400000 )</semantic:text>
+            </semantic:inputEntry>
+            <semantic:outputEntry id="_61533a21-f4b5-4ccd-b8f1-9a60c8a21fbd">
+              <semantic:text>( 0.015 * Mortgage.Purchase Price ) - 1525</semantic:text>
+            </semantic:outputEntry>
+          </semantic:rule>
+          <semantic:rule id="_545ad5d9-ab24-4fb2-b46c-d3998c412baa">
+            <semantic:inputEntry id="_6823cd52-1fd0-4c77-8e0b-6326607547ce">
+              <semantic:text>[ 400000 .. 2000000 )</semantic:text>
+            </semantic:inputEntry>
+            <semantic:outputEntry id="_5b48f64d-c028-42b3-b19d-5ac7a2ad3649">
+              <semantic:text>( 0.02 * Mortgage.Purchase Price ) - 3525</semantic:text>
+            </semantic:outputEntry>
+          </semantic:rule>
+          <semantic:rule id="_654ccd55-0c35-4244-afff-20205e1d1b78">
+            <semantic:inputEntry id="_82a1a32e-5a5a-4cd8-8707-1188969542a6">
+              <semantic:text>&gt;= 2000000</semantic:text>
+            </semantic:inputEntry>
+            <semantic:outputEntry id="_03f77ffa-9168-49df-9f2f-c9e56c0d68ed">
+              <semantic:text>( 0.02 * Mortgage.Purchase Price - 3525 ) + ( Mortgage.Purchase Price - 2000000 ) * .025</semantic:text>
+            </semantic:outputEntry>
+          </semantic:rule>
+        </semantic:decisionTable>
+      </semantic:contextEntry>
+      <semantic:contextEntry>
+        <semantic:variable id="_7c3a5757-f785-47a1-af6e-2e104afcaf19" name="Eligible for Rebate" typeRef="feel:boolean"/>
+        <semantic:literalExpression id="_e9600ffe-3b2c-419b-a710-c59f5d0c5950">
+          <semantic:text>Property.Province = "ON" and
+Buyer.Age &gt;= 18 and 
+Buyer.Canadian Citizen and
+Buyer.First Time Buyer</semantic:text>
+        </semantic:literalExpression>
+      </semantic:contextEntry>
+      <semantic:contextEntry>
+        <semantic:variable id="_6817e359-c032-4243-90d7-ce55ce037923" name="Rebate" typeRef="feel:number"/>
+        <semantic:literalExpression id="_378cb909-30c7-4ccd-986f-08ba9ff8911d">
+          <semantic:text>if Eligible for Rebate then
+    min( 4000, Base Amount )
+else
+    0</semantic:text>
+        </semantic:literalExpression>
+      </semantic:contextEntry>
+      <semantic:contextEntry>
+        <semantic:variable id="_d4c19bb2-e8f6-4424-89f0-9814a180b558" name="Foreign Buyer Tax"/>
+        <semantic:literalExpression id="_97823398-676e-4bf4-bd39-92943c8f17c2">
+          <semantic:text>if Buyer.Canadian Citizen then
+    0
+else
+    Mortgage.Purchase Price * 0.15</semantic:text>
+        </semantic:literalExpression>
+      </semantic:contextEntry>
+      <semantic:contextEntry>
+        <semantic:literalExpression id="_ee9d0b1b-a2f5-49f5-a438-eada3c79cf85">
+          <semantic:text>Base Amount - Rebate + Foreign Buyer Tax</semantic:text>
+        </semantic:literalExpression>
+      </semantic:contextEntry>
+    </semantic:context>
+  </semantic:decision>
+  <semantic:inputData id="_91c25061-ab55-4235-98ba-0709c2d9bf25" name="Property">
+    <semantic:variable id="_0b708641-70e9-458a-bf24-58cd3dbe9255" name="Property" typeRef="tProperty"/>
+  </semantic:inputData>
+  <semantic:inputData id="_a585f28c-56d0-4a44-8360-b1d46d3bc9cf" name="Buyer">
+    <semantic:variable id="_564df0d7-d31a-4a46-89ec-2bb02d3170ca" name="Buyer" typeRef="tBuyer"/>
+  </semantic:inputData>
+  <semantic:decision id="_4fd89334-4426-4ece-bafe-ddf41c4f66d1" name="Toronto Land Transfer Tax">
+    <semantic:variable id="_40913da1-3ba7-490d-bc3a-4890b418aba4" name="Toronto Land Transfer Tax" typeRef="feel:number"/>
+    <semantic:informationRequirement>
+      <semantic:requiredInput href="#_a585f28c-56d0-4a44-8360-b1d46d3bc9cf"/>
+    </semantic:informationRequirement>
+    <semantic:informationRequirement>
+      <semantic:requiredInput href="#_91c25061-ab55-4235-98ba-0709c2d9bf25"/>
+    </semantic:informationRequirement>
+    <semantic:informationRequirement>
+      <semantic:requiredInput href="#_abc44766-1793-475e-8e9a-2e7b8cbca22b"/>
+    </semantic:informationRequirement>
+    <semantic:authorityRequirement>
+      <semantic:requiredAuthority href="#_aa09dc57-4454-4472-8fb2-768ec7e04fe0"/>
+    </semantic:authorityRequirement>
+    <semantic:context id="_1407c714-ea00-481d-bb2c-1982e921cdc5">
+      <semantic:contextEntry>
+        <semantic:variable id="_bd1fcf16-fbe5-4057-ba40-10b271b52941" name="Base Amount" typeRef="feel:number"/>
+        <semantic:decisionTable hitPolicy="UNIQUE" id="_554a4ab6-091a-4f41-bd1b-abe880f12121" outputLabel="Base Amount">
+          <semantic:input id="_7da8597e-ab92-4c8e-82b2-9bd22c6c5fdd">
+            <semantic:inputExpression typeRef="feel:number">
+              <semantic:text>Mortgage.Purchase Price</semantic:text>
+            </semantic:inputExpression>
+          </semantic:input>
+          <semantic:output id="_245c663a-d3a0-4ee7-b44a-384f753cf712"/>
+          <semantic:rule id="_a629b9e1-e278-4be0-9751-b2ea2c456fac">
+            <semantic:inputEntry id="_330ba12a-194e-44be-bed1-78cf9cb379d6">
+              <semantic:text>&lt; 55000</semantic:text>
+            </semantic:inputEntry>
+            <semantic:outputEntry id="_82f3ef6b-d461-4414-ad70-2d6a23dfc685">
+              <semantic:text>0.005 * Mortgage.Purchase Price</semantic:text>
+            </semantic:outputEntry>
+          </semantic:rule>
+          <semantic:rule id="_1a4bcb81-1ed1-48ea-b95a-b528b42ef650">
+            <semantic:inputEntry id="_513583e5-78fc-46fd-8489-915b5c6e8504">
+              <semantic:text>[ 55000 .. 250000 )</semantic:text>
+            </semantic:inputEntry>
+            <semantic:outputEntry id="_596098fb-a374-4f87-91c4-f549af971b66">
+              <semantic:text>( 0.01 * Mortgage.Purchase Price ) - 275</semantic:text>
+            </semantic:outputEntry>
+          </semantic:rule>
+          <semantic:rule id="_08c5db0b-dc96-4c02-9ca1-23519cdc17c5">
+            <semantic:inputEntry id="_7e4b80e7-db37-4c96-97bb-a08293edfbb9">
+              <semantic:text>[ 250000 .. 400000 )</semantic:text>
+            </semantic:inputEntry>
+            <semantic:outputEntry id="_d2960dab-dd31-4954-b4f9-b907e6f49f08">
+              <semantic:text>( 0.015 * Mortgage.Purchase Price ) - 1525</semantic:text>
+            </semantic:outputEntry>
+          </semantic:rule>
+          <semantic:rule id="_622f029c-cf21-4dac-9570-b625ca55ef56">
+            <semantic:inputEntry id="_3c7814cc-8553-410d-9ce7-374966ebe569">
+              <semantic:text>[ 400000 .. 2000000 )</semantic:text>
+            </semantic:inputEntry>
+            <semantic:outputEntry id="_20687573-377b-4557-ad2b-94a10a11000f">
+              <semantic:text>( 0.02 * Mortgage.Purchase Price ) - 3525</semantic:text>
+            </semantic:outputEntry>
+          </semantic:rule>
+          <semantic:rule id="_fbe8fabf-f394-4e4e-86f7-953f46566da0">
+            <semantic:inputEntry id="_2c0aaf54-bcb7-442a-bd09-adbd13964f29">
+              <semantic:text>&gt;= 2000000</semantic:text>
+            </semantic:inputEntry>
+            <semantic:outputEntry id="_9e7ac01d-a89a-44e9-9b00-de8e491000dd">
+              <semantic:text>( 0.02 * Mortgage.Purchase Price - 3525 ) + ( Mortgage.Purchase Price - 2000000 ) * .025</semantic:text>
+            </semantic:outputEntry>
+          </semantic:rule>
+        </semantic:decisionTable>
+      </semantic:contextEntry>
+      <semantic:contextEntry>
+        <semantic:variable id="_6ccdeac7-5f02-4002-b1ef-7892ebd00935" name="Eligible for Rebate" typeRef="feel:boolean"/>
+        <semantic:literalExpression id="_c88a721f-b56e-4b0f-80ca-95c1c836d5a2">
+          <semantic:text>Property.City = "Toronto" and
+Buyer.Age &gt;= 18 and 
+Buyer.Canadian Citizen and
+Buyer.First Time Buyer</semantic:text>
+        </semantic:literalExpression>
+      </semantic:contextEntry>
+      <semantic:contextEntry>
+        <semantic:variable id="_aaf66773-bf57-4a85-b7b9-563c5d837ff9" name="Rebate" typeRef="feel:number"/>
+        <semantic:literalExpression id="_c63f095c-83fb-4e52-8462-9bba62dbc86c">
+          <semantic:text>if Eligible for Rebate then
+    min( 4475, Base Amount )
+else
+    0</semantic:text>
+        </semantic:literalExpression>
+      </semantic:contextEntry>
+      <semantic:contextEntry>
+        <semantic:literalExpression id="_02fc9dd7-d5de-4f79-adb0-cf785e2a98ff">
+          <semantic:text>if( Property.City = "Toronto" ) then 
+    Base Amount - Rebate
+else 
+    0</semantic:text>
+        </semantic:literalExpression>
+      </semantic:contextEntry>
+    </semantic:context>
+  </semantic:decision>
+  <semantic:decision id="_3e3637ee-591a-413c-855c-97c69481325a" name="Mortgage Insurance">
+    <semantic:variable id="_8268e1f6-5787-4dfe-90ad-fa837fc8ce9e" name="Mortgage Insurance" typeRef="feel:number"/>
+    <semantic:informationRequirement>
+      <semantic:requiredInput href="#_abc44766-1793-475e-8e9a-2e7b8cbca22b"/>
+    </semantic:informationRequirement>
+    <semantic:informationRequirement>
+      <semantic:requiredInput href="#_91c25061-ab55-4235-98ba-0709c2d9bf25"/>
+    </semantic:informationRequirement>
+    <semantic:informationRequirement>
+      <semantic:requiredInput href="#_a585f28c-56d0-4a44-8360-b1d46d3bc9cf"/>
+    </semantic:informationRequirement>
+    <semantic:authorityRequirement>
+      <semantic:requiredAuthority href="#_a7303578-dd4d-4ce8-b760-fe2017098361"/>
+    </semantic:authorityRequirement>
+    <semantic:context id="_8a859ed8-24ea-457a-9dfa-e48c5fca927e">
+      <semantic:contextEntry>
+        <semantic:variable id="_295a59f7-2453-40b5-9b3e-7f3b2d631656" name="Principal" typeRef="feel:number"/>
+        <semantic:literalExpression id="_e9fcec3c-4c7f-4726-82e2-c3b9fd6368dd">
+          <semantic:text>Mortgage.Purchase Price - Mortgage.Down Payment</semantic:text>
+        </semantic:literalExpression>
+      </semantic:contextEntry>
+      <semantic:contextEntry>
+        <semantic:variable id="_34ffeb12-4760-4d85-830c-92b015e99cb3" name="DTVR" typeRef="feel:number"/>
+        <semantic:literalExpression id="_0f7d1c3f-abce-4376-a63a-3a654670137a">
+          <semantic:text>Principal / Mortgage.Purchase Price</semantic:text>
+        </semantic:literalExpression>
+      </semantic:contextEntry>
+      <semantic:contextEntry>
+        <semantic:variable id="_2f240597-4650-4189-b28b-b36aa56c5ef2" name="Insured" typeRef="feel:boolean"/>
+        <semantic:literalExpression id="_0ecba8d6-abef-4ba6-9e1b-4ca815cadf84">
+          <semantic:text>Mortgage.Insurance or DTVR &gt; 0.8</semantic:text>
+        </semantic:literalExpression>
+      </semantic:contextEntry>
+      <semantic:contextEntry>
+        <semantic:variable id="_13746ed5-2803-4ce7-b144-0d0b3051d5ef" name="Rate" typeRef="feel:number"/>
+        <semantic:decisionTable hitPolicy="UNIQUE" id="_6a6a1679-c480-4e02-b5d6-2403a7a7040e" outputLabel="Rate">
+          <semantic:input id="_aaa204e6-d7b7-4776-8eb6-fa0435f960d0">
+            <semantic:inputExpression typeRef="feel:boolean">
+              <semantic:text>Insured</semantic:text>
+            </semantic:inputExpression>
+          </semantic:input>
+          <semantic:input id="_436fed90-a3f1-43aa-a616-f28634a4fb13">
+            <semantic:inputExpression typeRef="feel:number">
+              <semantic:text>DTVR</semantic:text>
+            </semantic:inputExpression>
+          </semantic:input>
+          <semantic:output id="_60dbd9d9-ea80-4fb7-9aa5-2a54c4c9cdc9"/>
+          <semantic:rule id="_d27645e9-497e-495c-81c7-21b429f0da2a">
+            <semantic:inputEntry id="_7d6dfc00-9999-4fee-996b-55d372549e9f">
+              <semantic:text>false</semantic:text>
+            </semantic:inputEntry>
+            <semantic:inputEntry id="_d69320ca-1a23-48cb-b491-d59e9e19eb27">
+              <semantic:text>-</semantic:text>
+            </semantic:inputEntry>
+            <semantic:outputEntry id="_d7ad3546-740e-45a0-b9c6-d71c9b158fda">
+              <semantic:text>0</semantic:text>
+            </semantic:outputEntry>
+          </semantic:rule>
+          <semantic:rule id="_5d3cbcb0-e1f9-4763-9b54-60fd3b197bf4">
+            <semantic:inputEntry id="_953b2437-74dc-4406-a06a-7eed3f62cd04">
+              <semantic:text>true</semantic:text>
+            </semantic:inputEntry>
+            <semantic:inputEntry id="_34795c04-c0e5-4980-bf72-3ced89bc074c">
+              <semantic:text>&lt;= 0.65</semantic:text>
+            </semantic:inputEntry>
+            <semantic:outputEntry id="_f414b180-04ad-4e59-a929-558324f7e7e0">
+              <semantic:text>0.006</semantic:text>
+            </semantic:outputEntry>
+          </semantic:rule>
+          <semantic:rule id="_e33be166-a76f-4b79-b6e2-ad58b478dcc7">
+            <semantic:inputEntry id="_8803fc92-433f-445d-9c5a-d86f540794a3">
+              <semantic:text>true</semantic:text>
+            </semantic:inputEntry>
+            <semantic:inputEntry id="_851b4aa5-e194-43ba-826e-72aa21e09426">
+              <semantic:text>( 0.65 .. 0.75 ]</semantic:text>
+            </semantic:inputEntry>
+            <semantic:outputEntry id="_f738f02f-8fdc-486b-a323-1fb327917305">
+              <semantic:text>0.017</semantic:text>
+            </semantic:outputEntry>
+          </semantic:rule>
+          <semantic:rule id="_cc24960f-dd3a-4ad1-9097-88d76727a1f9">
+            <semantic:inputEntry id="_a5b05a55-5928-4582-b466-3d2d5fa08de9">
+              <semantic:text>true</semantic:text>
+            </semantic:inputEntry>
+            <semantic:inputEntry id="_08d44a6a-6091-4438-832c-85c6bbfe0741">
+              <semantic:text>( 0.75 .. 0.80 ]</semantic:text>
+            </semantic:inputEntry>
+            <semantic:outputEntry id="_6591f936-5b96-4970-855b-0f790e6e5036">
+              <semantic:text>0.024</semantic:text>
+            </semantic:outputEntry>
+          </semantic:rule>
+          <semantic:rule id="_ba4ab1c9-b697-4fd1-9071-45a2c891d0bd">
+            <semantic:inputEntry id="_5e0296f7-80b5-473b-8941-fa3ebcb43388">
+              <semantic:text>true</semantic:text>
+            </semantic:inputEntry>
+            <semantic:inputEntry id="_0f66d420-d25d-42a7-a62c-5538a0318937">
+              <semantic:text>( 0.80 .. 0.85 ]</semantic:text>
+            </semantic:inputEntry>
+            <semantic:outputEntry id="_a80866cc-41b3-4109-874d-e33b73e2af6e">
+              <semantic:text>0.028</semantic:text>
+            </semantic:outputEntry>
+          </semantic:rule>
+          <semantic:rule id="_4de3c04e-21cb-44e3-a1e4-ed4f8e955e53">
+            <semantic:inputEntry id="_5e836803-aabd-42f2-9855-2e609a9ce359">
+              <semantic:text>true</semantic:text>
+            </semantic:inputEntry>
+            <semantic:inputEntry id="_63decdd3-b5b4-4c59-ad84-7763a9cbfcd3">
+              <semantic:text>( 0.85 .. 0.90 ]</semantic:text>
+            </semantic:inputEntry>
+            <semantic:outputEntry id="_dc939424-a151-480a-9778-0afbd9e79837">
+              <semantic:text>0.031</semantic:text>
+            </semantic:outputEntry>
+          </semantic:rule>
+          <semantic:rule id="_9e1bf656-6acb-4067-b933-c468ed64d816">
+            <semantic:inputEntry id="_85893e0d-999c-4bd0-8c6a-143846926e6c">
+              <semantic:text>true</semantic:text>
+            </semantic:inputEntry>
+            <semantic:inputEntry id="_3e6a0f48-239d-48f0-bd87-ef9d5d545c69">
+              <semantic:text>&gt; 0.90</semantic:text>
+            </semantic:inputEntry>
+            <semantic:outputEntry id="_b3b7f9b6-d4a3-4910-bf31-831a8ea6f017">
+              <semantic:text>0.040</semantic:text>
+            </semantic:outputEntry>
+          </semantic:rule>
+        </semantic:decisionTable>
+      </semantic:contextEntry>
+      <semantic:contextEntry>
+        <semantic:literalExpression id="_36b3e232-d3e2-4a70-aaa1-d0bc46bb82b0">
+          <semantic:text>Principal * Rate</semantic:text>
+        </semantic:literalExpression>
+      </semantic:contextEntry>
+    </semantic:context>
+  </semantic:decision>
+  <semantic:inputData id="_abc44766-1793-475e-8e9a-2e7b8cbca22b" name="Mortgage">
+    <semantic:variable id="_dd0d3382-7659-45a5-bbac-d0eabda48534" name="Mortgage" typeRef="tMortgage"/>
+  </semantic:inputData>
+  <semantic:knowledgeSource id="_a7303578-dd4d-4ce8-b760-fe2017098361" locationURI="https://www.cmhc-schl.gc.ca/en/co/moloin/moloin_005.cfm" name="CMHC Insurance Premium">
+    <semantic:owner href="#_d85ae09f-0933-49d5-b425-24f0dd58b090"/>
+  </semantic:knowledgeSource>
+  <semantic:knowledgeSource id="_bf90fd57-da92-4cd7-b271-72343ab01db2" locationURI="https://www.fin.gov.on.ca/en/bulletins/ltt/1_2008.html" name="Ontario Land Transfer Tax Legislation">
+    <semantic:owner href="#_e2939d36-cd51-497e-9e2c-7158f572adc6"/>
+  </semantic:knowledgeSource>
+  <semantic:knowledgeSource id="_aa09dc57-4454-4472-8fb2-768ec7e04fe0" locationURI="https://www.toronto.ca/services-payments/property-taxes-utilities/municipal-land-transfer-tax-mltt/municipal-land-transfer-tax-mltt-rebate-opportunities/" name="Toronto Land Transfer Tax Legislation">
+    <semantic:owner href="#_c5267f04-daf3-4573-a1ee-1574ee943d6a"/>
+  </semantic:knowledgeSource>
+  <semantic:decision id="_17ed1d65-2490-4dad-b523-fe92832a65bb" name="Real Estate Taxes">
+    <semantic:variable id="_ac521ac4-22c8-4ce6-8e71-c3d18ca835a0" name="Real Estate Taxes" typeRef="tPurchaseTaxes"/>
+    <semantic:informationRequirement>
+      <semantic:requiredDecision href="#_5136a196-0046-4367-9c62-96f0d19ab084"/>
+    </semantic:informationRequirement>
+    <semantic:informationRequirement>
+      <semantic:requiredDecision href="#_4fd89334-4426-4ece-bafe-ddf41c4f66d1"/>
+    </semantic:informationRequirement>
+    <semantic:informationRequirement>
+      <semantic:requiredDecision href="#_3e3637ee-591a-413c-855c-97c69481325a"/>
+    </semantic:informationRequirement>
+    <semantic:context id="_ec2f64bc-e3c6-48e2-8e25-cfe9123efbd9">
+      <semantic:contextEntry>
+        <semantic:variable id="_48850883-8947-4b45-8210-a42f7e0a15b9" name="Ontario Tax" typeRef="feel:number"/>
+        <semantic:literalExpression id="_9606254f-a8bf-4b54-a879-cb0c8129f76b">
+          <semantic:text>Ontario Land Transfer Tax</semantic:text>
+        </semantic:literalExpression>
+      </semantic:contextEntry>
+      <semantic:contextEntry>
+        <semantic:variable id="_a1491d01-c21a-4afa-96d7-4a14b718bc52" name="Toronto Tax" typeRef="feel:number"/>
+        <semantic:literalExpression id="_571f6f24-d30e-4c92-a356-4d949b8abdd6">
+          <semantic:text>Toronto Land Transfer Tax</semantic:text>
+        </semantic:literalExpression>
+      </semantic:contextEntry>
+      <semantic:contextEntry>
+        <semantic:variable id="_f4655163-bbad-4893-9794-f67e6c6036ac" name="Insurance Premium" typeRef="feel:number"/>
+        <semantic:literalExpression id="_8effdcd0-bba7-430c-9ec9-375c979e88e4">
+          <semantic:text>Mortgage Insurance</semantic:text>
+        </semantic:literalExpression>
+      </semantic:contextEntry>
+    </semantic:context>
+  </semantic:decision>
+  <semantic:organizationUnit id="_d85ae09f-0933-49d5-b425-24f0dd58b090" name="Canadian Mortgage and Housing Corporation"/>
+  <semantic:organizationUnit id="_e2939d36-cd51-497e-9e2c-7158f572adc6" name="Ministry of Finance - Ontario"/>
+  <semantic:organizationUnit id="_c5267f04-daf3-4573-a1ee-1574ee943d6a" name="City of Toronto"/>
+</semantic:definitions>

@@ -1,0 +1,12 @@
+.container{
+    padding-top: 20px;
+}
+#logo{
+    float: left;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-right: 10px;
+}
+#title{
+   color:white;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Smart Land Registry Client Application</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/css/patternfly.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/css/patternfly-additions.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <nav class="navbar navbar-default navbar-pf" role="navigation">
+            <div class="navbar-header">
+                    <div id="logo">
+                      <img src="images/logo.png" alt="" />
+                    </div>
+                    <div id="title">
+                    <h2>Smart Land Registry Client Application | DMN Cookbook</h2>
+                    </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div id="initiateSale">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label for="propertyContract" class="col-sm-2 control-label">Property Contract:</label>
+              <div class="col-sm-10">
+                <input id="propertyContract" class="form-control" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="buyer" class="col-sm-2 control-label">Buyer's Account:</label>
+              <div class="col-sm-10">
+                <input id="buyer" type="text" value="0xb3324abc6a5b67126b2b84754a5dd6ab7641f823">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="salePrice" class="col-sm-2 control-label">Sale Price:</label>
+              <div class="col-sm-10">
+                <input id="salePrice" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="xchangeRate" class="col-sm-2 control-label">Ether Exchange Rate:</label>
+              <div class="col-sm-10">
+                <input id="xchangeRate" type="text">
+              </div>
+            </div>
+            <button type="button" id="initiateSaleButton">Initiate Sale</button>
+          </form>
+        </div>
+        <div id="submitBuyerInformation">
+          <label for="buyerName" class="col-lg-2 control-label">Buyer's Name:</label>
+          <input id="buyerName" type="text" value="John Smith">
+
+          <label for="buyerAge" class="col-lg-2 control-label">Buyer's Age:</label>
+          <input id="buyerAge" type="text" value="35">
+
+          <input id="citizen" type="checkbox">
+          <label for="citizen" class="col-lg-2 control-label">Canadian Citizen?</label>
+
+          <input id="firstTime" type="checkbox">
+          <label for="firstTime" class="col-lg-2 control-label">First Time Buyer?</label>
+
+          <label for="downpayment" class="col-lg-2 control-label">Down Payment:</label>
+          <input id="downpayment" type="text">
+
+          <input id="optInsurance" type="checkbox">
+          <label for="optInsurance" class="col-lg-2 control-label">Opt in for Insurance?</label>
+
+          <button id="submitBuyerInfoButton">Submit Buyer Information</button>
+        </div>
+
+    </div>
+
+    <!-- script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/js/patternfly.min.js"></script>
+
+    <script src="js/init.js"></script>
+    <script src="js/propertyContract.js"></script>
+
+    <script>
+      // var stop = true;
+      // var id =setInterval(function () {
+      //   if(stop){
+      //     console.log("eder");
+      //   }
+      //   }, 1000);
+
+        //turn of window.clearInterval(1)
+
+        //first page auto load
+        $(document).ready(function () {
+           $('#initiateSale').css('display', '');
+           $('#submitBuyerInformation').css('display', 'none');
+        });
+
+        $("#initiateSaleButton").click(function () {
+            console.log("contract address="+$("#propertyContract").val());
+            var Registry = RegistryContract.at($("#propertyContract").val());
+            // Registry.initiateSale($("#buyer").val(), $("#salePrice").val() * 100, $("#xchangeRate").val() * 100,
+            //           {from: web3.eth.accounts[1], gas:4000000} );
+
+            $('#initiateSale').css('display', 'none');
+            $('#submitBuyerInformation').css('display', '');
+        });
+
+    </script>
+
+</body>
+
+</html>
