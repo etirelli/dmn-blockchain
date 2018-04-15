@@ -2,32 +2,44 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Smart Land Registry Client Application</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Smart Land Registry Client Application</title>
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/css/patternfly.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/css/patternfly-additions.min.css">
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <script src="./node_modules/web3/dist/web3.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/css/patternfly.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/css/patternfly-additions.min.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script src="./node_modules/web3/dist/web3.min.js"></script>
 </head>
 
 <body>
-    <div class="header">
-        <nav class="navbar navbar-default navbar-pf" role="navigation">
-            <div class="navbar-header">
-                    <div id="logo">
-                      <img src="images/logo.png" alt="" />
-                    </div>
-                    <div id="title">
-                    <h2>Smart Land Registry Client Application | DMN Cookbook</h2>
-                    </div>
-            </div>
-        </nav>
-    </div>
+  <div class="header">
+    <nav class="navbar navbar-default navbar-pf" role="navigation">
+      <div class="navbar-header">
+        <div id="logo">
+          <img src="images/logo.png" alt="" />
+        </div>
+        <div id="title">
+          <h2>Smart Land Registry Client Application | DMN Cookbook</h2>
+        </div>
+      </div>
+    </nav>
+  </div>
 
-    <div class="container">
+  <div class="container">
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a data-toggle="tab" href="#tab1">TAB 1</a>
+      </li>
+      <li>
+        <a data-toggle="tab" href="#tab2">TAB 2</a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div id="tab1" class="tabs tab-pane fade in active">
+        <!-- tab 1 -->
         <div id="initiateSale">
           <form class="form-horizontal">
             <div class="form-group">
@@ -79,44 +91,58 @@
           <button id="submitBuyerInfoButton">Submit Buyer Information</button>
         </div>
 
+      </div>
+      <div id="tab2" class="tabs tab-pane fade">
+        <h3>Menu 1</h3>
+        <p>Some content in menu 1.</p>
+      </div>
     </div>
 
-    <!-- script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/js/patternfly.min.js"></script>
 
-    <script src="js/init.js"></script>
-    <script src="js/propertyContract.js"></script>
 
-    <script>
-      // var stop = true;
-      // var id =setInterval(function () {
-      //   if(stop){
-      //     console.log("eder");
-      //   }
-      //   }, 1000);
 
-        //turn of window.clearInterval(1)
+    <!-- tab 2 -->
 
-        //first page auto load
-        $(document).ready(function () {
-           $('#initiateSale').css('display', '');
-           $('#submitBuyerInformation').css('display', 'none');
-        });
 
-        $("#initiateSaleButton").click(function () {
-            console.log("contract address="+$("#propertyContract").val());
-            var Registry = RegistryContract.at($("#propertyContract").val());
-            // Registry.initiateSale($("#buyer").val(), $("#salePrice").val() * 100, $("#xchangeRate").val() * 100,
-            //           {from: web3.eth.accounts[1], gas:4000000} );
+  </div>
 
-            $('#initiateSale').css('display', 'none');
-            $('#submitBuyerInformation').css('display', '');
-        });
+  <!-- script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script -->
 
-    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/js/patternfly.min.js"></script>
+
+  <script src="js/init.js"></script>
+  <script src="js/propertyContract.js"></script>
+
+  <script>
+    // var stop = true;
+    // var id =setInterval(function () {
+    //   if(stop){
+    //     console.log("eder");
+    //   }
+    //   }, 1000);
+
+    //turn of window.clearInterval(1)
+
+    //first page auto load
+    $(document).ready(function () {
+      $('#initiateSale').css('display', '');
+      $('#submitBuyerInformation').css('display', 'none');
+    });
+
+    $("#initiateSaleButton").click(function () {
+      console.log("contract address=" + $("#propertyContract").val());
+      var Registry = RegistryContract.at($("#propertyContract").val());
+      // Registry.initiateSale($("#buyer").val(), $("#salePrice").val() * 100, $("#xchangeRate").val() * 100,
+      //           {from: web3.eth.accounts[1], gas:4000000} );
+
+      $('#initiateSale').css('display', 'none');
+      $('#submitBuyerInformation').css('display', '');
+    });
+
+  </script>
 
 </body>
 
